@@ -11,26 +11,27 @@ For gathering data:
    
 As part of assessing data the task was to assess data both visually and programmatically and find at least 8 quality issues and 2 tidiness issues  
 I have documented my findings as below:  
-  <ins>Quality:</ins>  
-     Archive df:  
-       1. Remove retweets based on retweeted_status_id column => if isn't NaN, then retweet (column 'text' starts with 'RT @")  
-        2.timestamp is an object type, not datetime  
-        3.IDs columns with float/integer types to be changed to string  
-        4.change lower-case dog names to "None"  
-        5.source column to be dropped as it does not contain any valid information  
-        6.rating columns should be changed to floats - this was corrected at source as part of iteration process   
-        7. Add ratio column to get rid of very different denominators  
-           
-       predictions:    
-           8. predictions are lower/upper case  
-           3. IDs columns with float/integer types to be changed to string (not counting this as separate quality issue)   
-          
-       df_1:  
-           3. IDs columns with float/integer types to be changed to string (not counting this as separate quality issue)  
+
+Quality
+        Archive df:  
+          1. Remove retweets based on retweeted_status_id column => if isn't NaN, then retweet (column 'text' starts with 'RT @")  
+           2.timestamp is an object type, not datetime  
+           3.IDs columns with float/integer types to be changed to string  
+           4.change lower-case dog names to "None"  
+           5.source column to be dropped as it does not contain any valid information  
+           6.rating columns should be changed to floats - this was corrected at source as part of iteration process   
+           7. Add ratio column to get rid of very different denominators 
+        
+          predictions df:    
+              8. predictions are lower/upper case  
+              3. IDs columns with float/integer types to be changed to string (not counting this as separate quality issue)   
+             
+          df_1:  
+              3. IDs columns with float/integer types to be changed to string (not counting this as separate quality issue)  
         
         
-    <ins>Tidiness:</ins>  
-      1. columns puppo/pupper/floofer/doggo => melt them into one  
-      2. merge all 3 datasets into one, as they are all containing the same observations  
+       Tidiness:  
+         1. columns puppo/pupper/floofer/doggo => melt them into one  
+         2. merge all 3 datasets into one, as they are all containing the same observations  
 
 The next step was to actually clean data in a clear “Define-Code-Test” Framework. I have tackled each identified issue as first defining it, then coding the solution and testing it.  
